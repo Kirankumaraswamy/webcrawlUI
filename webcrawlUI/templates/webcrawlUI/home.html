@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+{% block page_content %}
+<div class="display-container1">
+    <div class=""display-container11>
+        <h5 style="padding-left: 10px">States</h5>
+    </div>
+    <div class="display-container12">
+   <i style="padding-left: 5em"><a href="runWebCrawlTask/null/null">Run Web Crawler</a></i>
+<i style="padding-left: 5em"><a href="runGoogleSpider/null/null">Run Google Search Crawler</a></i>
+</div>
+</div>
+
+
+
+<table >
+    {% for state in states %}
+    <tr>
+      <td>
+          <ul>
+         <li>
+         <a href="{{state.name}}">{{ state.name}}</a>
+        </li>
+    </ul>
+      </td>
+
+    </tr>
+
+
+    {% endfor %}
+</table>
+{% endblock %}

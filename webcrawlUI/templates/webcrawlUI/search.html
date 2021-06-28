@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>My Dictionary</title>
+		<link rel="stylesheet" href="template.css">
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+		<script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+		<script src="search.js"></script>
+
+	</head>
+	<body>
+		<div class="banner">
+			<h1 style="color: blue"> KK's Dictionary</h1>
+		</div>
+		<div class="form_search">
+			<!--Make sure the form has the autocomplete function switched off:-->
+                        <form autocomplete="off">	
+  				<div class="autocomplete" style="width:300px;">
+    					<input id="key" type="text" name="key" placeholder="Enter Search Word">
+  				</div>
+			</form>
+		</div>
+		</br>
+		<div id=result>
+			
+			<h2 style='text-align: center; text-color: blue; text-decoration: underline' id="word"> </h2>
+			<ol id="result_list"></ol>
+
+		</div>
+	</body>
+</html>

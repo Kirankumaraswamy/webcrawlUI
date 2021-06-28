@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+{% block page_content %}
+<div class="display-container1">
+    <div class="display-container11">
+        <h5 >(<a href="/">States</a>/<a href="/{{state_name}}">{{state_name}}</a>/{{city_name}})</h5>
+    </div>
+    <div class="display-container12">
+        <i style="padding-left: 5em"><a href="/runWebCrawlTask/{{state_name}}/{{city_name}}">Run Web Crawler</a></i>
+    <i style="padding-left: 5em"><a href="/runGoogleSpider/{{state_name}}/{{city_name}}">Run Google Search Crawler</a></i>
+    </div>
+</div>
+<div>
+    <h6 >Google returned links for <span style="color: blue"> {{city_name}}</span> geminde:</h6>
+</div>
+<ul>
+{% for link in weblinks %}
+    <li>
+         <a href="{{link.weblink}}">{{link.weblink}}</a>
+    </li>
+    {% endfor %}
+</ul>
+<h4>Content downloaded: {{webdata|length}}</h4>
+<ul>
+    {% for data in webdata %}
+        <h6>content: {{forloop.counter}} -> <a href="{{data.weblink}}">{{data.weblink}}</a></h6>
+        <div style="background-color: beige">
+             <p >{{data.text}}</p>
+        </div>
+        {% endfor %}
+</ul>
+{% endblock %}
